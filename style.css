@@ -118,7 +118,7 @@
 
 /* Container Utama */
 .manfaat-section {
-    padding: 15px 15px;
+    padding: 15px;
     background-color: #fdf5e6; /* Warna krem lembut sesuai tema bumi */
 }
 
@@ -146,6 +146,34 @@
     box-shadow: 0 10px 20px rgba(0,0,0,0.05);
     transition: transform 0.3s ease;
     border-bottom: 5px solid #6b8e23; /* Garis hijau di bawah card */
+}
+
+/* Wadah pembungkus flexbox untuk mengatur posisi tengah & bersebelahan */
+.wrapper-kartu {
+    display: flex;
+    justify-content: center; /* Memposisikan kotak agar di tengah */
+    align-items: center;     /* Menyelaraskan posisi vertikal */
+    gap: 20px;               /* Jarak antar kotak */
+    flex-wrap: wrap;         /* Agar otomatis turun ke bawah jika dibuka di HP */
+    width: 100%;
+    margin: 20px auto;
+}
+
+/* Pengaturan ukuran tiap kotak card */
+.card_satu {
+    background: #ffffff;
+    padding: 20px;
+    flex: 1;                 /* Membuat ukuran fleksibel */
+    min-width: 280px;        /* Lebar minimal agar aman di layar kecil */
+    max-width: 350px;        /* Batasi lebar maksimal agar tidak terlalu lebar */
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.card_satu:hover {
+    transform: translateY(-5px);
 }
 
 .card:hover {
@@ -194,7 +222,7 @@
 
 .dokumentasi {
     text-align: center;
-    background-color: #A68E74;
+    color: #3d2b1f;
     padding: 10px;
     padding-bottom: 0%;
 }
