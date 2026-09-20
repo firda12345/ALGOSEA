@@ -4,66 +4,74 @@
     box-sizing: border-box;
 }
 
+/* Memperbaiki pembungkus banner agar responsif di HP */
 .gambar-1 {
-  width: 100%;
-  height:100%; 
-  object-fit: cover;  /* Menghindari gambar gepeng */
+    position: relative;
+    width: 100%;
+    height: 70vh; /* Menggunakan tinggi layar relatif agar pas di HP maupun laptop */
+    background-color: #000;
+}
+
+.Gambar-1 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Menghindari gambar gepeng */
+    opacity: 0.8; /* Sedikit redup agar teks lebih terbaca */
 }
 
 .text {
     position: absolute; /* Meletakkan teks bebas di atas gambar */
-    top: 50%;           /* Geser 50% dari atas */
-    left: 50%;          /* Geser 50% dari kiri */
+    top: 50% !important;         /* Geser 50% dari atas */
+    left: 50% !important;        /* Geser 50% dari kiri */
     transform: translate(-50%, -50%); /* Titik tengah sempurna */   
     color: white;       /* Warna teks */
     text-align: center;
-    width: 100%;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Agar teks kontras */
+    width: 90%;         /* Batasi lebar agar tidak mentok ke pinggir layar HP */
+    max-width: 800px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* Agar teks kontras */
 }
 
 .text h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+    font-size: 2rem;    /* Ukuran disesuaikan agar pas di layar kecil */
+    margin-bottom: 15px;
 }
+
 .text p1 {
-    font-size: 1.3rem;
-    max-width: 100px; /* Membatasi lebar teks agar lebih mudah dibaca */
+    font-size: 1rem;    /* Ukuran disesuaikan agar mudah dibaca di HP */
+    max-width: 100%;    /* Perbaikan dari max-width: 100px yang bikin teks menumpuk ke bawah */
+    display: block;
     margin: 0 auto;   
 }
 
 .dasbor {
     background-color: #A68E74; /* Warna coklat konsisten */
     width: 100%;
-    min-height: 400px;         /* Sesuaikan tinggi sesuai kebutuhan */
+    min-height: auto;          
     display: flex;             /* Mengaktifkan flexbox */
     justify-content: center;   /* Mengetengahkan secara horizontal */
     align-items: center;       /* Mengetengahkan secara vertikal */
-    padding: 40px 20px;        /* Memberi ruang agar tidak menempel ke tepi layar */
+    padding: 25px 20px 0px 20px;
 }
 
 .frame {
-    background: rgba(255, 255, 255, 0.1); /* Background transparan halus */
-    backdrop-filter: blur(10px);         /* Efek kaca (glassmorphism) */
-    -webkit-backdrop-filter: blur(10px);   
+    background: rgba(255, 255, 255, 0.1); /* Background transparan halus */ 
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;                 /* Border radius yang lebih modern */  
     max-width: 900px;                    /* Lebar maksimal kotak */
-    width: 100%;
-    padding: 40px;                       /* Jarak dalam agar teks tidak mepet border */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Shadow lembut */
+    padding: 10px;                  /* Jarak dalam disesuaikan untuk HP */
     text-align: center;
 }
 
 .frame h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;                    /* Menyesuaikan ukuran di HP */
     color: #3d2b1f;                     /* Warna teks gelap agar mudah dibaca */
     margin-bottom: 15px;
     font-weight: bold;
 }
 
 .frame p {
-    font-size: 1.1rem;
-    line-height: 1.7;                    /* Jarak antar baris agar nyaman dibaca */
+    font-size: 1rem;
+    line-height: 1.4;                    /* Jarak antar baris agar nyaman dibaca */
     color: #15120f;
     text-align: justify;                 /* Teks rata kiri-kanan */
     margin: 0 auto;
@@ -73,18 +81,14 @@
     background-color: #A68E74;
     width: 100%;
     min-height: auto;
-    /* justify-content: center;
-    align-items: center; */
-    padding: 50px 40px;
-    padding-top: 0%;
-    padding-bottom: 3%;
+    padding: 30px 20px;
 }
+
 .buat {
     color: #3d2b1f;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     font-size: 1.3rem;
-    padding-top: 20px;
 }
 
 .wrapper-konten {
@@ -102,43 +106,42 @@
 }
 
 .gambar-2 {
-    display: block;          /* Ubah dari inline ke block agar margin auto bekerja*/
-    margin-left: auto;       /*(karna sy ngk pake div, karna langsung jdi hrs ketiga css di atasnya)*/
+    display: block;           
+    margin-left: auto;       
     margin-right: auto;     
-
-    width: 500px;           /*untuk mengatur ukuran gambar agar tidak terlalu besar atau kcil*/
-    height: 500px;
-        
-    object-fit: cover;       /* Menjaga proporsi gambar */
+    width: 100%;              
+    max-width: 350px;         /* Batas maksimal ukuran di layar besar */
+    height: auto;             /* Tinggi otomatis menyesuaikan agar tidak gepeng */
+    border-radius: 15px;      /* Mempercantik sudut gambar */
+    object-fit: cover;       
 }
 
 /* Container Utama */
 .manfaat-section {
-    padding: 50px 20px;
+    padding: 15px 15px;
     background-color: #fdf5e6; /* Warna krem lembut sesuai tema bumi */
 }
 
 .title-manfaat {
     text-align: center;
     color: #3d2b1f;
-    margin-bottom: 40px;
-    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-size: 1.5rem;          /* Disesuaikan agar muat di layar HP */
 }
 
-/* Pengaturan Grid */
 .grid-manfaat {
     display: grid;
     /* Membuat 3 kolom jika layar lebar, dan otomatis menyesuaikan jika layar kecil */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Style untuk Setiap Card */
 .card {
     background: #ffffff;
-    padding: 30px;
+    padding: 10px;
+    padding-top: 0%;
     border-radius: 20px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.05);
     transition: transform 0.3s ease;
@@ -146,7 +149,7 @@
 }
 
 .card:hover {
-    transform: translateY(-10px); /* Efek melayang saat kursor di atasnya */
+    transform: translateY(-5px); 
 }
 
 .card .icon {
@@ -157,52 +160,68 @@
 .card h3 {
     color: #2e4d23;
     margin-bottom: 10px;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 
 .card p {
     color: #555;
     line-height: 1.5;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
 .footer {
     background-color: #e8e0db;
-    padding: 5px 30px 20px;
+    padding: 20px 15px;
 }
+
 .pembuatan-1 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: #000000;
     text-align: center;
-    margin-top: 20px;
-    padding: 20px solid #d2834e;
+    margin-top: 10px;
+    padding: 15px;
+    border-radius: 10px;
 }
+
 .icon-logo {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     object-fit: cover;
-    border-radius: 25px;
-    margin: 20px auto;
+    border-radius: 20px;
+    margin: 15px auto;
+    display: block;
 }
+
+.dokumentasi {
+    text-align: center;
+    background-color: #A68E74;
+    padding-bottom: 10px;
+}
+
 .link {
-    display: flex;                  /* untuk mengatur tata letak */
-    justify-content: center;        /* untuk menengahkan */
-    gap: 25px;                      /* untuk memberi jarak antar link */
-    font-size: 20px;
+    display: flex;                    /* untuk mengatur tata letak */
+    justify-content: center;         /* untuk menengahkan */
+    flex-wrap: wrap;                  /* Agar link sosial media otomatis turun ke bawah jika layar HP kekecilan */
+    gap: 15px;                        /* untuk memberi jarak antar link */
+    font-size: 18px;
+    margin-top: 10px;
 }
+
 .link a {
-    font-family: Roboto;
-    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.95rem;
     color: #3d2b1f;
     font-weight: bold;
-    text-decoration: none;        /* Menghilangkan garis bawah */
+    text-decoration: none;           /* Menghilangkan garis bawah */
 }
+
 .link a:hover {
     color: #8fa097;
 }
 
 .copiright {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 20px;
     font-size: 12px;
+    color: #555;
 }
