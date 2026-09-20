@@ -7,20 +7,44 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="dasbor" style="min-height: 100vh; flex-direction: column;">
-        <div class="frame">
-            <h2>Dokumentasi Proses ALGOSEA</h2>
-            <p>Berikut adalah beberapa potret di balik layar proses pembuatan bioplastik dari alga.</p>
+    <div class="dasbor" style="min-height: 100vh; flex-direction: column; padding: 40px 20px;">
+        <div class="frame" style="max-width: 1200px; width: 100%;">
             
-            <!-- Tempat foto-foto dokumentasi kamu nanti -->
-            <div style="margin-top: 20px;">
-                <img src="gambar.1.png" style="width: 100%; max-width: 400px; border-radius: 10px; margin-bottom: 15px;">
-                <!-- Kamu bisa tambah tag <img src="nama-foto.png"> lagi di sini -->
+            <!-- Bagian Judul Utama -->
+            <h2 style="font-size: 2rem; color: #3d2b1f; margin-bottom: 10px;">Dokumentasi Proses ALGOSEA</h2>
+            <p style="color: #15120f; margin-bottom: 30px;">Berikut adalah beberapa potret di balik layar proses pembuatan bioplastik dari alga.</p>
+            
+            <!-- Grid Kartu Foto Dokumentasi -->
+            <div class="grid-manfaat">
+                
+                <!-- Kartu Foto 1 -->
+                <div class="card">
+                    <img src="gambar.1.png" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;">
+                    <h3>Pengambilan Alga di Laut</h3>
+                    <p>Proses eksplorasi dan pemanenan alga coklat (Padina sp.) langsung dari pesisir pantai.</p>
+                </div>
+
+                <!-- Kartu Foto 2 -->
+                <div class="card">
+                    <img src="gambar.2.png" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;">
+                    <h3>Proses Pengolahan Biomaterial</h3>
+                    <p>Pencampuran serbuk alga dengan bahan organik lainnya untuk menciptakan adonan bioplastik.</p>
+                </div>
+
+                <!-- Kartu Foto 3 -->
+                <div class="card">
+                    <img src="logo-algosea.png" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;">
+                    <h3>Hasil Akhir Polybag ALGOSEA</h3>
+                    <p>Uji coba produk polybag ramah lingkungan yang siap digunakan sebagai media tanam.</p>
+                </div>
+
             </div>
 
-            <br>
-            <!-- Tombol kembali ke halaman utama -->
-            <a href="index.html" class="link-kembali" style="color: #3d2b1f; font-weight: bold; text-decoration: underline;">&larr; Kembali ke Beranda</a>
+            <!-- Tombol Kembali ke Beranda (Hanya 1 yang dipakai agar rapi) -->
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="index.html" style="display: inline-block; background-color: #3d2b1f; color: #fff; padding: 12px 25px; border-radius: 10px; text-decoration: none; font-weight: bold;">&larr; Kembali ke Beranda</a>
+            </div>
+
         </div>
     </div>
 </body>
