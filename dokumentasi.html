@@ -4,48 +4,403 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dokumentasi ALGOSEA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8faf9;
+            color: #2b2b2b;
+            margin: 0;
+            padding: 0;
+        }
+
+        .doc-section {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .doc-header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .doc-header h1 {
+            font-size: 2.2rem;
+            color: #1b4332;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .doc-header p {
+            color: #52796f;
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .doc-card {
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #eef2f0;
+        }
+
+        .doc-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 28px rgba(27, 67, 50, 0.12);
+        }
+
+        .doc-img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            background-color: #e8f5e9;
+        }
+
+        .doc-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .doc-card:hover .doc-img-wrapper img {
+            transform: scale(1.06);
+        }
+
+        .doc-content {
+            padding: 20px 22px 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .doc-content h3 {
+            font-size: 1.2rem;
+            color: #1b4332;
+            margin: 0 0 10px 0;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .doc-content p {
+            font-size: 0.92rem;
+            color: #6c757d;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* ================= PROSES PEMBUATAN CLEAN ZIG-ZAG ================= */
+        .process-section-clean {
+            max-width: 950px;
+            margin: 80px auto 40px auto;
+            padding: 0 10px;
+        }
+
+        .process-title-clean {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .process-title-clean h2 {
+            font-size: 2rem;
+            color: #1b4332;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .process-title-clean p {
+            color: #52796f;
+            font-size: 1rem;
+        }
+
+        .process-clean-list {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+        }
+
+        .process-clean-row {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .process-clean-row:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .process-clean-img {
+            width: 100%;
+            max-width: 400px;
+            height: 250px;
+            border-radius: 16px;
+            object-fit: cover;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            flex-shrink: 0;
+        }
+
+        .process-clean-row:hover .process-clean-img {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 30px rgba(27, 67, 50, 0.12);
+        }
+
+        .process-clean-text {
+            width: 100%;
+            max-width: 450px;
+        }
+
+        .process-clean-text h4 {
+            font-size: 1rem;
+            color: #1b4332;
+            margin: 0 0 10px 0;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .process-clean-text p {
+            font-size: 0.95rem;
+            color: #6c757d;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Tata letak khusus Laptop (Desktop) */
+        @media (min-width: 768px) {
+            .process-clean-row {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                gap: 60px;
+            }
+
+            .process-clean-img {
+                width: 48%;
+                max-width: none;
+                height: 280px;
+            }
+
+            .process-clean-text {
+                width: 48%;
+                max-width: none;
+                text-align: left;
+            }
+
+            /* Selang-seling (Zig-Zag) */
+            .process-clean-row:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+
+            .process-clean-row:nth-child(even) .process-clean-text {
+                text-align: right;
+            }
+        }
+
+        /* Tombol Kembali */
+        .nav-back {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #1b4332;
+            color: #ffffff;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            box-shadow: 0 4px 12px rgba(27, 67, 50, 0.15);
+        }
+
+        .btn-back:hover {
+            background-color: #2d6a4f;
+            transform: translateY(-2px);
+        }
+
+        /* Animasi Scroll Dua Arah */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: opacity 0.7s cubic-bezier(0.25, 1, 0.5, 1), transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .scroll-animate.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 600px) {
+            .doc-section {
+                padding: 40px 16px;
+            }
+
+            .doc-header h1, .process-title-clean h2 {
+                font-size: 1.75rem;
+            }
+
+            .doc-header p, .process-title-clean p {
+                font-size: 0.95rem;
+            }
+
+            .doc-grid {
+                gap: 20px;
+            }
+
+            .doc-img-wrapper {
+                height: 190px;
+            }
+
+            .process-clean-img {
+                height: 200px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="dasbor" style="min-height: 100vh; flex-direction: column; padding: 40px 20px;">
-        <div class="frame" style="max-width: 1200px; width: 100%;">
-            
-            <!-- Bagian Judul Utama -->
-            <h2 style="font-size: 2rem; color: #3d2b1f; margin-bottom: 10px;">Dokumentasi Proses ALGOSEA</h2>
-            <p style="color: #15120f; margin-bottom: 30px;">Berikut adalah beberapa potret di balik layar proses pembuatan bioplastik dari alga.</p>
-            
-            <!-- Grid Kartu Foto Dokumentasi -->
-            <div class="grid-manfaat">
-                
-                <!-- Kartu Foto 1 -->
-                <div class="card">
-                    <img src="gambar.1.png" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;">
-                    <h3>Pengambilan Alga di Laut</h3>
-                    <p>Proses eksplorasi dan pemanenan alga coklat (Padina sp.) langsung dari pesisir pantai.</p>
+
+    <main class="doc-section">
+
+        <header class="doc-header">
+            <h1>Dokumentasi Proses ALGOSEA</h1>
+            <p>Di balik layar pembuatan bio-polybag ramah lingkungan berbasis alga cokelat (<em>Padina sp.</em>)</p>
+        </header>
+
+        <div class="doc-grid">
+
+            <article class="doc-card">
+                <div class="doc-img-wrapper">
+                    <img src="src/proseskering.jpeg" alt="Eksplorasi dan Pemanenan Alga">
                 </div>
-
-                <!-- Kartu Foto 2 -->
-                <div class="card">
-                    <img src="gambar.2.png" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;">
-                    <h3>Proses Pengolahan Biomaterial</h3>
-                    <p>Pencampuran serbuk alga dengan bahan organik lainnya untuk menciptakan adonan bioplastik.</p>
+                <div class="doc-content">
+                    <h3>1. Eksplorasi &amp; Pengeringan Alga</h3>
+                    <p>Proses pemanenan alga cokelat (<em>Padina sp.</em>) langsung dari pesisir pantai Lombok, dilanjutkan dengan tahap pengeringan alami.</p>
                 </div>
+            </article>
 
-                <!-- Kartu Foto 3 -->
-                <div class="card">
-                    <img src="logo-algosea.png" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;">
-                    <h3>Hasil Akhir Polybag ALGOSEA</h3>
-                    <p>Uji coba produk polybag ramah lingkungan yang siap digunakan sebagai media tanam.</p>
+            <article class="doc-card">
+                <div class="doc-img-wrapper">
+                    <img src="src/bersama.jpeg" alt="Pengolahan Biomaterial">
                 </div>
+                <div class="doc-content">
+                    <h3>2. Pengolahan Biomaterial</h3>
+                    <p>Pencampuran formulasi serbuk alga dengan matriks organik di laboratorium untuk menciptakan formulasi adonan bioplastik.</p>
+                </div>
+            </article>
 
-            </div>
-
-            <!-- Tombol Kembali ke Beranda (Hanya 1 yang dipakai agar rapi) -->
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="index.html" style="display: inline-block; background-color: #3d2b1f; color: #fff; padding: 12px 25px; border-radius: 10px; text-decoration: none; font-weight: bold;">&larr; Kembali ke Beranda</a>
-            </div>
+            <article class="doc-card">
+                <div class="doc-img-wrapper">
+                    <img src="src/prosescoba.jpeg" alt="Percobaan Produk Polybag">
+                </div>
+                <div class="doc-content">
+                    <h3>3. Prototipe Polybag ALGOSEA</h3>
+                    <p>Uji coba awal pencetakan produk <em>bio-polybag</em> ramah lingkungan yang siap diaplikasikan sebagai media tanam nutrisi.</p>
+                </div>
+            </article>
 
         </div>
-    </div>
+
+        <section class="process-section-clean">
+
+            <div class="process-title-clean scroll-animate">
+                <h2>Proses Pembuatan ALGOSEA</h2>
+                <p>Tahapan produksi langsung di Laboratorium Hidrobiologi oleh tim ALGOSEA.</p>
+            </div>
+
+            <div class="process-clean-list">
+
+                <div class="process-clean-row scroll-animate">
+                    <img src="src/prosespembuatan.png" alt="Proses Pembuatan ALGOSEA" class="process-clean-img">
+                    <div class="process-clean-text">
+                        <h4>Tahapan Pembuatan ALGOSEA</h4>
+                        <ol style="margin: 0; padding-left: 20px; line-height: 1.7; color: #6c757d; font-size: 0.95rem;">
+                            <li style="margin-bottom: 8px;">Alga <em>Padina sp.</em> dikeringkan dan digiling sampai halus.</li>
+                            <li style="margin-bottom: 8px;">Campurkan beberapa bahan, lalu masak di atas kompor sampai mendidih sambil terus diaduk.</li>
+                            <li style="margin-bottom: 8px;">Setelah itu, tuangkan adonan ke dalam cetakan dan ratakan.</li>
+                            <li>Jemur di bawah sinar matahari sampai kering, kemudian bentuk sesuai kebutuhan.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="process-clean-row scroll-animate">
+                    <img src="src/percobaan2.jpeg" alt="Beberapa Percobaan ALGOSEA" class="process-clean-img">
+                    <div class="process-clean-text">
+                        <h4>Beberapa Percobaan</h4>
+                        <p>Kami melakukan beberapa kali percobaan secara berkala untuk mendapatkan hasil produk yang paling optimal.</p>
+                    </div>
+                </div>
+
+                <div class="process-clean-row scroll-animate">
+                    <img src="src/ketemumentor.png" alt="Pencetakan Prototipe" class="process-clean-img">
+                    <div class="process-clean-text">
+                        <h4>Diskusi dengan Dosen Pembimbing</h4>
+                        <p>Sesi bimbingan, evaluasi progres, dan konsultasi bersama dosen pembimbing terkait penyempurnaan kualitas inovasi <em>bio-polybag</em> ALGOSEA.</p>
+                    </div>
+                </div>
+
+                <div class="process-clean-row scroll-animate">
+                    <img src="src/diskusianggota.png" alt="Beberapa Percobaan ALGOSEA" class="process-clean-img">
+                    <div class="process-clean-text">
+                        <h4>Diskusi dengan Anggota Team</h4>
+                        <p>Sesi koordinasi dan tukar pikiran antar anggota tim untuk mematangkan strategi, pembagian tugas, serta evaluasi perkembangan proyek ALGOSEA.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Navigation Back Button -->
+        <div class="nav-back">
+            <a href="index.html" class="btn-back">
+                &larr; Kembali ke Beranda
+            </a>
+        </div>
+
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const animateElements = document.querySelectorAll('.scroll-animate');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    } else {
+                        entry.target.classList.remove('is-visible');
+                    }
+                });
+            }, {
+                root: null,
+                threshold: 0.15
+            });
+
+            animateElements.forEach(el => observer.observe(el));
+        });
+    </script>
 </body>
 </html>

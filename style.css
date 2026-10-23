@@ -4,11 +4,14 @@
     box-sizing: border-box;
 }
 
-/* Memperbaiki pembungkus banner agar responsif di HP */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
 .gambar-1 {
     position: relative;
     width: 100%;
-    height: 70vh; /* Menggunakan tinggi layar relatif agar pas di HP maupun laptop */
+    height: 70vh;
     background-color: #000;
 }
 
@@ -16,7 +19,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover; /* Menghindari gambar gepeng */
-    opacity: 0.8; /* Sedikit redup agar teks lebih terbaca */
+    opacity: 0.8; 
 }
 
 .text {
@@ -24,27 +27,26 @@
     top: 50% !important;         /* Geser 50% dari atas */
     left: 50% !important;        /* Geser 50% dari kiri */
     transform: translate(-50%, -50%); /* Titik tengah sempurna */   
-    color: white;       /* Warna teks */
+    color: white;       
     text-align: center;
     width: 90%;         /* Batasi lebar agar tidak mentok ke pinggir layar HP */
     max-width: 800px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* Agar teks kontras */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .text h1 {
-    font-size: 2rem;    /* Ukuran disesuaikan agar pas di layar kecil */
+    font-size: 2rem;   
     margin-bottom: 15px;
 }
 
 .text p1 {
-    font-size: 1rem;    /* Ukuran disesuaikan agar mudah dibaca di HP */
-    max-width: 100%;    /* Perbaikan dari max-width: 100px yang bikin teks menumpuk ke bawah */
+    font-size: 1rem;   
     display: block;
     margin: 0 auto;   
 }
 
 .dasbor {
-    background-color: #A68E74; /* Warna coklat konsisten */
+    background-color: #A68E74;
     width: 100%;
     min-height: auto;          
     display: flex;             /* Mengaktifkan flexbox */
@@ -118,7 +120,7 @@
 
 /* Container Utama */
 .manfaat-section {
-    padding: 15px;
+    padding: 10px;
     background-color: #fdf5e6; /* Warna krem lembut sesuai tema bumi */
 }
 
@@ -181,7 +183,6 @@
 }
 
 .card .icon {
-    font-size: 30px;
     margin-bottom: 10px;
 }
 
@@ -198,16 +199,14 @@
 }
 
 .footer {
-    background-color: #e8e0db;
-    padding: 20px 15px;
+    background-color: #ffffff;
+    padding: 10px 10px;
 }
 
 .pembuatan-1 {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #000000;
     text-align: center;
-    margin-top: 10px;
-    padding: 15px;
     border-radius: 10px;
 }
 
@@ -224,16 +223,15 @@
     text-align: center;
     color: #3d2b1f;
     padding: 10px;
-    padding-bottom: 0%;
+    padding-top: 0%;
 }
 
 .link {
     display: flex;                    /* untuk mengatur tata letak */
-    justify-content: center;         /* untuk menengahkan */
+    justify-content: center;        
     flex-wrap: wrap;                  /* Agar link sosial media otomatis turun ke bawah jika layar HP kekecilan */
     gap: 15px;                        /* untuk memberi jarak antar link */
     font-size: 18px;
-    margin-top: 10px;
 }
 
 .link a {
@@ -253,4 +251,135 @@
     margin-top: 20px;
     font-size: 12px;
     color: #555;
+}
+
+.team-section {
+  padding: 20px 15px;
+  background-color: #fdf5e6;
+}
+
+.team-section .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.section-title h2 {
+  font-size: 1.6rem;
+  color: #1b4332;
+  margin-bottom: 6px;
+}
+
+.section-title p {
+  color: #52796f;
+  font-size: 0.9rem;
+}
+
+.group-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #2d6a4f;
+  margin: 20px 0 10px 4px;
+  font-weight: 700;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+/* Di layar tablet/laptop (min 600px), ganti jadi 2 kolom */
+@media (min-width: 600px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.compact-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.compact-card:hover {
+  border-color: #52b788;
+  transform: translateY(-2px);
+}
+
+.advisor-card {
+  border-left: 4px solid #344e41;
+  background: #f4f7f4;
+}
+
+.lead-card {
+  border-left: 4px solid #1b4332;
+}
+
+.compact-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  background-color: #e8f5e9;
+}
+
+.compact-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.compact-badge {
+  align-self: flex-start;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background-color: #e8f5e9;
+  color: #2d6a4f;
+  margin-bottom: 3px;
+  text-transform: uppercase;
+}
+
+.advisor-bg {
+  background-color: #344e41;
+  color: #ffffff;
+}
+
+.lead-bg {
+  background-color: #1b4332;
+  color: #ffffff;
+}
+
+.compact-info h4 {
+  font-size: 0.95rem;
+  color: #1b4332;
+  margin: 0;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.compact-info p {
+  font-size: 0.8rem;
+  color: #6c757d;
+  margin: 2px 0 0 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

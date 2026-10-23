@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackholer ALGOSEA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8faf9;
+            color: #2b2b2b;
+            margin: 0;
+            padding: 0;
+        }
+
+        .doc-section {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .doc-header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .doc-header h1 {
+            font-size: 2.2rem;
+            color: #1b4332; 
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .doc-header p {
+            color: #52796f;
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .doc-card {
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #eef2f0;
+        }
+
+        .doc-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 28px rgba(27, 67, 50, 0.12);
+        }
+
+        .doc-img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            background-color: #e8f5e9;
+        }
+
+        .doc-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .doc-card:hover .doc-img-wrapper img {
+            transform: scale(1.06);
+        }
+
+        .doc-content {
+            padding: 20px 22px 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .doc-content h3 {
+            font-size: 1.2rem;
+            color: #1b4332;
+            margin: 0 0 10px 0;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .doc-content p {
+            font-size: 0.92rem;
+            color: #6c757d;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Tombol Kembali Minimalis */
+        .nav-back {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #1b4332;
+            color: #ffffff;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            box-shadow: 0 4px 12px rgba(27, 67, 50, 0.15);
+        }
+
+        .btn-back:hover {
+            background-color: #2d6a4f;
+            transform: translateY(-2px);
+        }
+
+        /* Adaptasi Layar HP */
+        @media (max-width: 600px) {
+            .doc-section {
+                padding: 40px 16px;
+            }
+            
+            .doc-header h1 {
+                font-size: 1.75rem;
+            }
+
+            .doc-header p {
+                font-size: 0.95rem;
+            }
+
+            .doc-grid {
+                gap: 20px;
+            }
+
+            .doc-img-wrapper {
+                height: 190px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="doc-section">
+
+        <header class="doc-header">
+            <h1>Dokumentasi Stakeholder ALGOSEA</h1>
+            <p>Berikut adalah beberapa potret dokumentasi kegiatan bersama stakeholder ALGOSEA.</p>
+        </header>
+
+        <div class="doc-grid">
+
+            <article class="doc-card">
+                <div class="doc-img-wrapper">
+                    <img src="src/stackholer1.jpeg" alt="Eksplorasi dan Pemanenan Alga">
+                </div>
+                <div class="doc-content">
+                    <h3>Dokumentasi dengan SORCE & AUTORE</h3>
+                    <p>Proses kegiatan bersama stakeholder penanaman pohon di Bangko-bangko Sekotong.</p>
+                </div>
+
+            <article class="doc-card">
+                <div class="doc-img-wrapper">
+                    <img src="src/sorce.png" alt="Pengolahan Biomaterial">
+                </div>
+                <div class="doc-content">
+                    <h3>Presentasi dengan SORCE</h3>
+                    <p>Sesi pemaparan materi dan diskusi interaktif bersama tim SORCE terkait pengembangan serta potensi efektivitas inovasi bioplastik berbasis alga.</p>
+                </div>
+            </article>
+
+            <article class="doc-card">
+                <div class="doc-img-wrapper">
+                    <img src="src/stackholer.jpeg" alt="Percobaan Produk Polybag">
+                </div>
+                <div class="doc-content">
+                    <h3>Prototipe Polybag ALGOSEA</h3>
+                    <p>Penerapan langsung inovasi bio-polybag berbahan alga yang dirancang sebagai wadah tanam kaya nutrisi sekaligus pengganti plastik sekali pakai.</p>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Navigation Back Button -->
+        <div class="nav-back">
+            <a href="index.html" class="btn-back">
+                &larr; Kembali ke Beranda
+            </a>
+        </div>
+
+    </main>
+
+</body>
+</html>
